@@ -1,0 +1,8 @@
+{
+  "arduino.useArduinoCli": true,
+  "arduino.commandPath": "arduino-cli",
+  "arduino.logLevel": "info",
+  "arduino.defaultBaudRate": 115200,
+  "arduino.fqbn": "arduino:mbed_nicla:niclavision",
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/bin/python"
+}

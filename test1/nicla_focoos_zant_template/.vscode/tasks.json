@@ -1,0 +1,35 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Arduino: Compile (Nicla)",
+      "type": "shell",
+      "command": "arduino-cli compile --fqbn arduino:mbed_nicla:niclavision ${workspaceFolder}/arduino",
+      "group": "build",
+      "problemMatcher": []
+    },
+    {
+      "label": "Arduino: Upload (serial)",
+      "type": "shell",
+      "command": "arduino-cli upload -p ${input:serialPort} --fqbn arduino:mbed_nicla:niclavision ${workspaceFolder}/arduino",
+      "dependsOn": "Arduino: Compile (Nicla)"
+    },
+    {
+      "label": "Arduino: Serial Monitor",
+      "type": "shell",
+      "command": "arduino-cli monitor -p ${input:serialPort} -c baudrate=115200"
+    }
+  ],
+  "inputs": [
+    {
+      "id": "serialPort",
+      "type": "pickString",
+      "description": "Select the serial port",
+      "options": [
+        "/dev/tty.usbmodem14101",
+        "/dev/ttyACM0",
+        "/dev/cu.usbmodemXXXX"
+      ]
+    }
+  ]
+}
